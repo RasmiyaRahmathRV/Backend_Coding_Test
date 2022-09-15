@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class Occurence extends Controller
+class OccurenceController extends Controller
 {
     public function index()
     {
@@ -21,6 +21,24 @@ class Occurence extends Controller
                 print($value);
             endif;
         });
+
+    }
+
+    public function groupByOwnersService()
+    {
+        $arr1 = array(
+            'insurance.txt' => 'Company A', 
+            'letter.docx' => 'Company A',
+            'Contract.docx' => 'Company B'
+        );
+        
+        $arr2 = array();
+        foreach ($arr1 as $key => $value) {
+            $arr2[$value][] = $key;
+        }
+       
+
+        echo"<pre>";print_r($arr2);
 
     }
 }

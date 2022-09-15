@@ -22,4 +22,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::get('/find_occurence', [OccurenceController::class, 'find_occurence']);
+Route::get('/groupByOwnersService', [OccurenceController::class, 'groupByOwnersService']);
 Route::get('/fetch_hours', [AttendanceController::class, 'fetch_hours']);
