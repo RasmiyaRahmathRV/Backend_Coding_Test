@@ -3,7 +3,8 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
-use App\Http\Controllers\Occurence;
+use App\Http\Controllers\OccurenceController;
+use App\Http\Controllers\AttendanceController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,4 +21,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('/find_occurence', [Occurence::class, 'find_occurence']);
+Route::get('/find_occurence', [OccurenceController::class, 'find_occurence']);
+Route::get('/fetch_hours', [AttendanceController::class, 'fetch_hours']);
